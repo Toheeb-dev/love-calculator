@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.1-dist/css/bootstrap.css">
+</head>
+<body>
+    <style>
+        #background{
+            height: 100vh;
+            background-image: url(./love2.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-top: 130px;
+        }
+        #background2{
+            background: rgba( 0, 0, 0, 0.55 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0.5px );
+-webkit-backdrop-filter: blur( 0.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+    </style>
+    <section id="background">
+    <div class="text-center text-light w-75 p-4 pb-2 mx-auto rounded-4" id="background2">
+    <h1><b> LOVE CALCULATOR</b></h1>
+    <input type="text" class="form-control my-2 " placeholder="Enter your name" id="inputName">
+    <input type="text" class="form-control my-2" placeholder="Enter your lover's name" id="inputLover">
+    <button class="btn btn-danger" onclick="lovecalculate()">Calculate</button>
+    <h1 id="disp"></h1>
+    <h1 id="comments"></h1>
+    </div> 
+</section>
+    <script>
+    function lovecalculate() {
+        var randomNum = Math.round(Math.random()*100) 
+        function name() {
+            disp.innerHTML = `${inputName.value }&${ inputLover.value} 
+            <h2 class="text-primary">${randomNum} % Love</h2>`
+         inputName.value=""
+         inputLover.value=""
+        }
+        if(inputName.value==""||inputLover==""){
+            alert("Kindly fill in the require field completely")
+            disp.innerText = ""
+            comments.innerHTML = ""
+        }
+        else if(inputName.value=="Toheeb"||inputLover.value=="Toheeb"){
+            disp.innerHTML = `${inputName.value }&${ inputLover.value} 
+            <h3 class="text-danger">100% Love</h3>`
+        comments.innerText = "Best Couple"
+        inputName.value=""
+         inputLover.value=""
+        background2.style.backgroundColor = "hotpink"
+        }
+        else if(randomNum>=90){
+        name()
+        comments.innerText = "Best Couple"
+        background2.style.backgroundColor = "hotpink"
+        }
+        else if (randomNum>=80) {
+            name()
+            comments.innerText = "Best Match"
+            background2.style.backgroundColor = "blue"
+        }
+        else if (randomNum>=70) {
+            name()
+            comments.innerText = "You are both real lovers "
+            background2.style.backgroundColor = "green"
+        }
+        else if (randomNum>=60) {
+            name()
+            comments.innerText = "Sweethearts "
+            background2.style.backgroundColor = "purple"
+        }
+        else if (randomNum>=50) {
+            name()
+            comments.innerText = "Friend with Benefit "
+            background2.style.backgroundColor = "grey"
+        }
+        else if (randomNum>=40) {
+            name()
+            comments.innerText = "Besties "
+            background2.style.backgroundColor = "cyan"
+        }
+        else if (randomNum>=30) {
+            name()
+            comments.innerText = "Beware of the coming breakfast, Pls don't cry "
+            background2.style.backgroundColor = "yellow"
+        }
+        else if (randomNum <= 10) {
+            name()
+            comments.innerText = "Hook-up friends"
+            background2.style.backgroundColor = "red"
+        }
+        
+    }
+</script>
+<script src="./bootstrap-5.2.1-dist/js/bootstrap.js"></script>
+<script src="./bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
